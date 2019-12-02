@@ -7,7 +7,7 @@ namespace TechJobs.Models
         // Enum representing the JobField properties of a Job
         // that can be viewed and searched.
 
-        Employer,
+        Employers,
         Location,
         CoreCompetency,
         PositionType,

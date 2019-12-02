@@ -13,31 +13,34 @@ namespace TechJobs.ViewModels
 
         [Required]
         [Display(Name = "Employer")]
-        public int EmployerID { get; set; }
+        public int EmployerID { get; set; }// in the code in this block, we create an ID of each property to be passed to the view 
 
-        
+        [Required]
+        [Display(Name = "Location")]
+        public int LocationID { get; set; }
+
+        [Required]
+        [Display(Name = "Core Competencies")]
+        public int CoreCompetenciesID { get; set; }
+
+        [Required]
+        [Display(Name = "Position Type")]
+        public int PositionTypeID { get; set; }
 
 
 
-        // TODO #3 - Included other fields needed to create a job,
+
+
+        // Included other fields needed to create a job,
         // with correct validation attributes and display names.
 
 
         public List<SelectListItem> Employers { get; set; } = new List<SelectListItem>();
-
-        [Required]
-        [Display(Name = "Location")]
         public List<SelectListItem> Locations { get; set; } = new List<SelectListItem>();
-
-        [Required]
-        [Display(Name = "Core Competencies")]
         public List<SelectListItem> CoreCompetencies { get; set; } = new List<SelectListItem>();
-
-        [Required]
-        [Display(Name = "Position Type")]
         public List<SelectListItem> PositionTypes { get; set; } = new List<SelectListItem>();
 
-        public NewJobViewModel()
+        public NewJobViewModel()// in this constructor we populate the select items with the IDs
         {
 
             JobData jobData = JobData.GetInstance();
@@ -57,8 +60,7 @@ namespace TechJobs.ViewModels
                 Locations.Add(new SelectListItem
                 {
                    
-                    Value = ((int)JobFieldType.Location).ToString(),
-                    
+                    Value = field.ID.ToString(),
                     Text = field.Value
                 });
             }
@@ -67,7 +69,7 @@ namespace TechJobs.ViewModels
                 CoreCompetencies.Add(new SelectListItem
                 {
 
-                    Value = ((int)JobFieldType.CoreCompetency).ToString(),
+                    Value = field.ID.ToString(),
                     Text = field.Value
                 });
             }
@@ -76,14 +78,14 @@ namespace TechJobs.ViewModels
                 PositionTypes.Add(new SelectListItem
                 {
 
-                    Value = ((int)JobFieldType.PositionType).ToString(),
+                    Value = field.ID.ToString(),
                     Text = field.Value
                 });
             }
 
 
 
-            // TODO #4 - populate the other List<SelectListItem> 
+            // populate the other List<SelectListItem> 
             // collections needed in the view
 
         }

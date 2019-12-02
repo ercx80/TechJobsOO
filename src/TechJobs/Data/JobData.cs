@@ -75,7 +75,7 @@ namespace TechJobs.Data
         {
             switch (type)
             {
-                case JobFieldType.Employer:
+                case JobFieldType.Employers:
                     return job.Employer;
                 case JobFieldType.Location:
                     return job.Location;

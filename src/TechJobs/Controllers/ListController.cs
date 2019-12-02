@@ -45,7 +45,7 @@ namespace TechJobs.Controllers
 
                 switch (column)
                 {
-                    case JobFieldType.Employer:
+                    case JobFieldType.Employers:
                         fields = jobData.Employers.ToList().Cast<JobField>();
                         break;
                     case JobFieldType.Location:
