@@ -3,6 +3,7 @@ using TechJobs.Models;
 using TechJobs.Data;
 using TechJobs.ViewModels;
 
+
 namespace TechJobs.Controllers
 {
     public class SearchController : Controller
